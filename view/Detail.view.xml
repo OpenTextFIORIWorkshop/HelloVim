@@ -1,0 +1,83 @@
+<mvc:View 
+	controllerName="HelloVim.view.Detail"
+	xmlns="sap.m" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core">
+	<Page 
+		id="detailsPage"
+		title="{i18n>DETAIL_TITLE}"
+		class="sapUiFioriObjectPage"  
+		showNavButton="{device>/isPhone}" 
+		navButtonPress="handleNavButtonPress">
+	
+		<ObjectHeader id="header"
+			title="title"
+			number="123"
+			numberUnit="EUR"
+			>
+			
+			<attributes id="detailsAttributes">
+				<ObjectAttribute text="VendorName" />
+				<ObjectAttribute text="VendorAddress" />
+				<ObjectAttribute text="VendorPhone" />
+			</attributes>
+			
+			<statuses>
+			<ObjectStatus text="open" state="Error" />
+			<ObjectStatus text="invoice-date" />
+			</statuses>
+		</ObjectHeader>
+		
+		<IconTabBar 
+			id="iconTabBar"
+			expanded="{device>/isNoPhone}" >
+			<customData id="customData2">
+                <core:CustomData id="coreCustomData2" key="sapDtResourcePath" value=""></core:CustomData>
+            </customData>
+			<items id="detailsItems">
+			
+				<IconTabFilter
+					icon="sap-icon://batch-payments">
+					    <content>
+					        <mvc:XMLView viewName="HelloVim.view.LineItems" />
+					    </content>
+				</IconTabFilter>
+			
+				<IconTabFilter
+					icon="sap-icon://documents">
+					    <content>
+					        <mvc:XMLView viewName="HelloVim.view.Document" />
+					    </content>
+				</IconTabFilter>
+			
+				<IconTabFilter
+					icon="sap-icon://history">
+					    <content>
+					        <mvc:XMLView viewName="HelloVim.view.History" />
+					    </content>
+				</IconTabFilter>
+			
+				<IconTabFilter
+					icon="sap-icon://attachment">
+					    <content>
+					        <mvc:XMLView viewName="HelloVim.view.Attachments" />
+					    </content>
+				</IconTabFilter>
+
+				<core:ExtensionPoint name="extIconTabFilter"/>
+				
+			</items>
+		</IconTabBar>
+		
+		<core:ExtensionPoint name="extDetail"/>
+		
+		<footer id="detailsFooter">
+			<Bar id="bar">
+				<contentRight id="detailsContentRight">
+					<Button id="actionButton" icon="sap-icon://action" press="openActionSheet"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

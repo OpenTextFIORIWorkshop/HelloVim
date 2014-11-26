@@ -1,0 +1,53 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:shellfooter="sap.ushell.ui.footerbar" controllerName="HelloVim.view.Master">
+	
+	<Page id="page" title="{i18n>MASTER_TITLE}">
+		<subHeader id="subHeader">
+			<Bar id="bar1">
+				<contentMiddle id="contentMiddle">
+					<SearchField id="searchField" showRefreshButton="{device>/isNoTouch}"
+						placeholder="{i18n>MASTER_SEARCH_PLACEHOLDER}" search="handleSearch"
+						tooltip="{i18n>MASTER_SEARCH_TOOLTIP}" width="100%">
+					</SearchField>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		
+		<content id="content">
+		
+			<List id="list" items="{/PurchaseOrders}" mode="{device>/listMode}"
+		
+				select="handleSelect" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished">
+				 <customData id="customData1">
+                            <core:CustomData id="coreCustomData1" key="sapDtResourcePath" value=""></core:CustomData>
+                 </customData>
+				 <items id="listItems">
+					<ObjectListItem id="mainListItem" type="{device>/listItemType}"
+				    title="Requestor-name"
+					number="100 of 300"
+					numberUnit="EUR"
+					icon="sap-icon://status-error"
+					press="handleSelect">
+						<customData id="customData2">
+                             <core:CustomData id="coreCustomData2" key="sapDtResourcePath" value=""></core:CustomData>
+                        </customData>
+						<attributes id="attributes">
+                            <ObjectAttribute text="Vendor-name" />
+                            <ObjectAttribute text="Invoice-date" />
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		
+		<footer id="footer">
+			<Bar id="bar2">
+				<contentLeft id="contentLeft">
+					<shellfooter:SettingsButton id="settingsButton"></shellfooter:SettingsButton>
+				</contentLeft>
+			</Bar>
+		</footer>
+	</Page>
+	
+</mvc:View>

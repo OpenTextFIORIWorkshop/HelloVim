@@ -1,0 +1,9 @@
+<mvc:View 
+	controllerName="HelloVim.view.History"
+	xmlns="sap.m" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core">
+	
+	<Label text="line item"/>
+</mvc:View>
