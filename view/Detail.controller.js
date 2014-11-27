@@ -14,12 +14,12 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 		}, this);
 	},
 	
-	onAcceptWithComment: function (event) {
-	    alert("onAcceptWithComment");
+	onApproveWithComment: function (event) {
+	    alert("onApproveWithComment");
 	},
 	
-	onAccept: function (event) {
-	    alert("onAccept");
+	onApprove: function (event) {
+	    alert("onApprove");
 	},
 	
 	onReject: function (event) {

@@ -7,10 +7,10 @@
 	<List
     id="AttachmentList"
     headerText="{i18n>ATTACHMENTLIST_HEADER}"
-    items="{ path: '/AttachmentCollection' }">
+    items="{fakeAttachments>/AttachmentCollection}">
       <items>
         <StandardListItem
-          title="{FileName}" />
+        title="{FileName}" />
       </items>
     </List>
 </mvc:View>

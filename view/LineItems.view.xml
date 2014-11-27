@@ -5,5 +5,45 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core">
 	
-	<Label text="line item"/>
+	<Table
+	id="lineItemsTable"
+    inset="false"
+    items="{/InvoiceItems}">
+    <headerToolbar>
+      <Toolbar>
+        <Label text="{i18n>LINE_ITEMS_TOOLBAR_TITLE}"></Label>
+      </Toolbar>
+    </headerToolbar>
+    <columns>
+      <Column
+        width="12em">
+        <Text text="{i18n>LINE_ITEMS_COST_TYPE}" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true">
+        <Text text="{i18n>LINE_ITEMS_COST_ASSIGNMENT}" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Right">
+        <Text text="{i18n>LINE_ITEMS_AMOUNT}" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          <Text
+            text="{KontoTxt}" />
+          <Text
+              text= "{parts:[{path:'AufnrTxt'}, {path:'KostlTxt'}, {path:'WbsElement'}], formatter: 'HelloVim.view.LineItemFormatter.getCostAssignmentText'}" />
+          <ObjectNumber
+            number="{ItemAmount}"
+            unit="{Currency}"
+           />
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
 </mvc:View>
