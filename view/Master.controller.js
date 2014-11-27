@@ -15,8 +15,13 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Master", {
 			this._list.setSelectedItem(firstItem);
 			this._navToListItem(firstItem);
 		}
+		var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+		var iPOCount = this._list.getItems().length;
+		var sCount = isNaN(iPOCount) ? "" : "" + iPOCount + "";
+		var sTitle = oResourceBundle.getText("MASTER_TITLE", [sCount]);
+		this.byId("page").setTitle(sTitle);
 	},
-
+	
 	handleSearch: function() {
 		// add filter for search
 		var filters = [];
