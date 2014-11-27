@@ -8,7 +8,7 @@
 	<Table
 	id="lineItemsTable"
     inset="false"
-    items="{/InvoiceItems}">
+    >
     <headerToolbar>
       <Toolbar>
         <Label text="{i18n>LINE_ITEMS_TOOLBAR_TITLE}"></Label>
@@ -32,7 +32,8 @@
       </Column>
     </columns>
     <items>
-      <ColumnListItem>
+      <ColumnListItem
+      id="lineItemRowTemplate">
         <cells>
           <Text
             text="{KontoTxt}" />

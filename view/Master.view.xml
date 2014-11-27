@@ -43,9 +43,9 @@
 		
 		<footer id="footer">
 			<Bar id="bar2">
-				<contentLeft id="contentLeft">
+			<!--	<contentLeft id="contentLeft">
 					<shellfooter:SettingsButton id="settingsButton"></shellfooter:SettingsButton>
-				</contentLeft>
+				</contentLeft> -->
 			</Bar>
 		</footer>
 	</Page>
