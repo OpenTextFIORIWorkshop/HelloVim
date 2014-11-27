@@ -32,7 +32,7 @@ HelloVim.util.formatter = {
 	},
 
 	formatInvoiceDetailTitle: function(requester, key) {
-		return HelloVim.util.formatter._getResourceBundle().getText("DETAIL_INVOICE_TITLE", [requester, key]);
+		return HelloVim.util.formatter._getResourceBundle(this).getText("DETAIL_INVOICE_TITLE", [requester, key]);
 	},
 
 	//_recentDateFormatter: sap.ui.core.format.DateFormat.getDateInstance({style: "daysAgo"}),
