@@ -9,7 +9,7 @@
 		  showNavButton="{device>/isPhone}" 
 		  navButtonPress="handleNavButtonPress">
 	
-		<ObjectHeader title="{i18n>DETAIL_TITLE_LABEL} {InvoiceKey}"
+		<ObjectHeader title="{parts:[{path: 'InvRequester'}, {path:'InvoiceKey'}], formatter: 'HelloVim.util.formatter.formatInvoiceTitle'}"
 			          number="{InvoiceAmt}"
 			          numberUnit="{Currency}">
 			
