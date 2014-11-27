@@ -20,7 +20,7 @@
           <commons:TimelineItem
             id="idTimelineItem" 
             userName="{ActualAppr}" 
-            title="{UserAction}" 
+            title="{path:'UserAction', formatter: 'HelloVim.util.formatter.formatUserActionText'}" 
             icon="sap-icon://activity-items"
             text="{LoggedAction}">
           </commons:TimelineItem>

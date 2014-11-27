@@ -1,3 +1,5 @@
+jQuery.sap.require("HelloVim.util.formatter");
+
 sap.ui.core.mvc.Controller.extend("HelloVim.view.History", {
     
     onInit: function() {

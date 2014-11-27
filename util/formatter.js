@@ -39,6 +39,18 @@ HelloVim.util.formatter = {
 
 	_getResourceBundle: function(control) {
 		return control.getModel("i18n").getResourceBundle();
+	},
+	
+	formatUserActionText: function(sAction) {
+	    if(sAction === "A") {
+	        return "Approved";
+	    }
+	    else if(sAction === "F") {
+	        return "Forwarded";
+	    }
+	    else {
+	        return "";
+	    }
 	}
 
 };
