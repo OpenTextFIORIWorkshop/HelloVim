@@ -11,14 +11,16 @@
      <commons:Timeline
         id="idTimeline"
         width="30%"
-        sortOldestFirst="true"
+        showIcons="false"
+        enableBackendFilter="false"
+        growing="false"
+        showHeaderBar="true" 
         content="{/InvoiceHistorySet}">
         <commons:content>
           <commons:TimelineItem
             id="idTimelineItem" 
-            dateTime="{Timestamp}"
             userName="{ActualAppr}" 
-            title="{userAction}" 
+            title="{UserAction}" 
             icon="sap-icon://activity-items"
             text="{LoggedAction}">
           </commons:TimelineItem>
