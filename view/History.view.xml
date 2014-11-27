@@ -1,9 +1,28 @@
 <mvc:View 
 	controllerName="HelloVim.view.History"
 	xmlns="sap.m" 
+	xmlns:commons="sap.suite.ui.commons"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core">
 	
-	<Label text="line item"/>
+	<Label text="History"/>
+	
+     <commons:Timeline
+        id="idTimeline"
+        width="30%"
+        sortOldestFirst="true"
+        content="{/InvoiceHistorySet}">
+        <commons:content>
+          <commons:TimelineItem
+            id="idTimelineItem" 
+            dateTime="{Timestamp}"
+            userName="{ActualAppr}" 
+            title="{userAction}" 
+            icon="sap-icon://activity-items"
+            text="{LoggedAction}">
+          </commons:TimelineItem>
+        </commons:content>
+      </commons:Timeline>  
+
 </mvc:View>

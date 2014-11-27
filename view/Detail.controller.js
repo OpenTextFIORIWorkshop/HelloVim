@@ -14,6 +14,18 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 		}, this);
 	},
 	
+	onAcceptWithComment: function (event) {
+	    alert("onAcceptWithComment");
+	},
+	
+	onAccept: function (event) {
+	    alert("onAccept");
+	},
+	
+	onReject: function (event) {
+	    alert("onReject");
+	},
+	
 	openActionSheet: function() {
 
 		if (!this._oActionSheet) {
