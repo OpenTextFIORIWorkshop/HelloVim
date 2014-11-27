@@ -12,7 +12,7 @@
 		navButtonPress="handleNavButtonPress">
 	
 		<ObjectHeader id="header"
-			title="{InvRequester}"
+			title="Invoice # {InvoiceKey}"
 			number="{InvoiceAmt}"
 			numberUnit="{Currency}"
 			>
