@@ -24,9 +24,9 @@
                  </customData>
 				 <items id="listItems">
 					<ObjectListItem id="mainListItem" type="{device>/listItemType}"
-				    title="Requestor-name"
-					number="100 of 300"
-					numberUnit="EUR"
+				    title="{InvRequester}"
+					number="{InvoiceAmt}"
+					numberUnit="{Currency}"
 					icon="sap-icon://status-error"
 					press="handleSelect">
 						<customData id="customData2">
