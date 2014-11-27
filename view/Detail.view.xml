@@ -12,20 +12,20 @@
 		navButtonPress="handleNavButtonPress">
 	
 		<ObjectHeader id="header"
-			title="title"
-			number="123"
-			numberUnit="EUR"
+			title="Invoice # {InvoiceKey}"
+			number="{InvoiceAmt}"
+			numberUnit="{Currency}"
 			>
 			
 			<attributes id="detailsAttributes">
-				<ObjectAttribute text="VendorName" />
-				<ObjectAttribute text="VendorAddress" />
-				<ObjectAttribute text="VendorPhone" />
+				<ObjectAttribute text="{VendorName}" />
+				<ObjectAttribute text="{Ort01}, {Pstlz}, {Land1}" />
+				<ObjectAttribute text="Phone {IpCallingSystem}" />
 			</attributes>
 			
 			<statuses>
-			<ObjectStatus text="open" state="Error" />
-			<ObjectStatus text="invoice-date" />
+			<ObjectStatus text="Status: {InvStatus}" state="Error" />
+			<ObjectStatus text="Invoice Date: {DueDate}" />
 			</statuses>
 		</ObjectHeader>
 		
@@ -45,9 +45,10 @@
 				</IconTabFilter>
 			
 				<IconTabFilter
-					icon="sap-icon://documents">
+					icon="sap-icon://documents"
+					>
 					    <content>
-					        <mvc:XMLView viewName="HelloVim.view.Document" />
+					        <mvc:JSView viewName="HelloVim.view.Document" height="1050px" />
 					    </content>
 				</IconTabFilter>
 			
@@ -73,11 +74,12 @@
 		<core:ExtensionPoint name="extDetail"/>
 		
 		<footer id="detailsFooter">
-			<Bar id="bar">
-				<contentRight id="detailsContentRight">
-					<Button id="actionButton" icon="sap-icon://action" press="openActionSheet"></Button>
-				</contentRight>
-			</Bar>
+			<Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Accept with comment" type="Accept" press="onAcceptWithComment" />
+                <Button text="Accept" type="Accept" press="onAccept" />
+                <Button text="Reject" type="Reject" press="onReject" />
+          </Toolbar>
 		</footer>
 	</Page>
 </mvc:View>

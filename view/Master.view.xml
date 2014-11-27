@@ -27,7 +27,7 @@
 				    title="{InvRequester}"
 					number="{InvoiceAmt}"
 					numberUnit="{Currency}"
-					icon="sap-icon://status-error"
+					icon="{path: 'InvoiceAmt', formatter: 'HelloVim.util.formatter.formatIcon'}" 
 					press="handleSelect">
 						<customData id="customData2">
                              <core:CustomData id="coreCustomData2" key="sapDtResourcePath" value=""></core:CustomData>
