@@ -15,7 +15,7 @@
 		
 		<content id="content">
 		
-			<List id="list" items="{/PurchaseOrders}" mode="{device>/listMode}"
+			<List id="list" items="{/Invoices}" mode="{device>/listMode}"
 		
 				select="handleSelect" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished">
