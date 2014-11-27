@@ -3,6 +3,7 @@ jQuery.sap.require("sap.ca.ui.model.format.DateFormat");
 jQuery.sap.require("sap.ca.ui.model.format.NumberFormat");
 
 HelloVim.util.formatter = {
+    
   formatDate:function(iDate){
         return iDate || new Date().toDateString();
   },
@@ -16,5 +17,14 @@ HelloVim.util.formatter = {
       var formater = sap.ui.core.format.NumberFormat.getFloatInstance(option);
       if (formater.parse(iAmount) > 20000) { icon = "sap-icon://warning2"; }
       return icon;
+  },
+  
+  formatStatusText: function (status) {
+      return status || "Open";
+  },
+  
+  formatStatusType: function (status) {
+      return status && "Warning" || "Success";
   }
+  
 };

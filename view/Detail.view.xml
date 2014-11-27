@@ -19,9 +19,9 @@
 			</attributes>
 			
 			<statuses>
-    			<ObjectStatus text="{InvStatus}"
-    			              state="Error" />
-	    		<ObjectStatus text="{DueDate}" />
+    			<ObjectStatus text="{path: 'InvStatus', formatter: 'HelloVim.util.formatter.formatStatusText'}"
+    			              state="{path: 'InvStatus', formatter: 'HelloVim.util.formatter.formatStatusType'}" />
+	    		<ObjectStatus text="{path: 'DueDate', formatter: 'HelloVim.util.formatter.formatDate'}" />
 			</statuses>
 			
 		</ObjectHeader>
