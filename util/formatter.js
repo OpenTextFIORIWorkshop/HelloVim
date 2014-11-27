@@ -5,8 +5,7 @@ jQuery.sap.require("sap.ca.ui.model.format.NumberFormat");
 HelloVim.util.formatter = {
 
 	formatDate: function(date) {
-		//return HelloVim.util.formatter_recentDateFormatter.format(date || new Date().toDateString());
-		return date || new Date().toDateString();
+		return HelloVim.util.formatter._recentDateFormatter.format(date || new Date());
 	},
 
 	formatIcon: function(iAmount) {
@@ -32,10 +31,11 @@ HelloVim.util.formatter = {
 	},
 
 	formatInvoiceDetailTitle: function(requester, key) {
-		return HelloVim.util.formatter._getResourceBundle().getText("DETAIL_INVOICE_TITLE", [requester, key]);
+	    return "";
+		//return HelloVim.util.formatter._getResourceBundle().getText("DETAIL_INVOICE_TITLE", [requester, key]);
 	},
 
-	//_recentDateFormatter: sap.ui.core.format.DateFormat.getDateInstance({style: "daysAgo"}),
+	_recentDateFormatter: sap.ca.ui.model.format.DateFormat.getDateInstance({style: "daysAgo"}),
 
 	_getResourceBundle: function(control) {
 		return control.getModel("i18n").getResourceBundle();
