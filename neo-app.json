@@ -8,7 +8,7 @@
         "name": "sapui5",
         "entryPath": "/resources"
       },
-      "description": "SAPUI5 Resources"
+      "description": "SAPUI5 Resources for Fiori Workshop"
     },
     {
       "path": "/test-resources",
