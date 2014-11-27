@@ -21,8 +21,8 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Attachments", {
 	},
 
     handlePress: function(oEvent) {
-	//	var oListItem = oEvent.getParameter("listItem") || oEvent.getSource();
-	//	this._navToListItem(oListItem);
+	//	var oAttachmentItem = oEvent.getParameter("attachmentItem") || oEvent.getSource();
+	//	this._navToListItem(oAttachmentItem);
 		var msg = 'Image displayed.';
         sap.m.MessageToast.show(msg);
 	}
