@@ -16,8 +16,8 @@ sap.ui.core.UIComponent.extend("HelloVim.Component", {
 			"titleResource" : "SHELL_TITLE",
 			
 			"serviceConfig": {
-				name: "EPM_REF_APPS_PO_APV_SRV",
-				serviceUrl: "/sap/opu/odata/sap/EPM_REF_APPS_PO_APV_SRV/"
+				name: "Z_WORKSHOP_GW_VIM_APR_SRV",
+				serviceUrl: "/sap/opu/odata/sap/Z_WORKSHOP_GW_VIM_APR_SRV/"
 			}
 		},
 

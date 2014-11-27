@@ -1,7 +1,16 @@
 {
   "welcomeFile": "index.html",
   "routes": [
-    {
+        {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "Q32",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "Backend OData services"
+    },
+{
       "path": "/resources",
       "target": {
         "type": "service",
