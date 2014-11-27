@@ -45,9 +45,10 @@
 				</IconTabFilter>
 			
 				<IconTabFilter
-					icon="sap-icon://documents">
+					icon="sap-icon://documents"
+					>
 					    <content>
-					        <mvc:XMLView viewName="HelloVim.view.Document" />
+					        <mvc:JSView viewName="HelloVim.view.Document" height="1000px" />
 					    </content>
 				</IconTabFilter>
 			
