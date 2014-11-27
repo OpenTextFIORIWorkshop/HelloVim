@@ -19,6 +19,7 @@
         <commons:content>
           <commons:TimelineItem
             id="idTimelineItem" 
+            dateTime="{path:'Timestamp', formatter: 'HelloVim.util.formatter.formatTimestampDateTime'}"
             userName="{ActualAppr}" 
             title="{path:'UserAction', formatter: 'HelloVim.util.formatter.formatUserActionText'}" 
             icon="sap-icon://activity-items"
