@@ -2,7 +2,8 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 
 	onInit: function() {
 		this._view = this.getView();
-	    //this._resources = this._view.getModel("i18n").getResourceBundle();
+	    this._resources = sap.ui.component(sap.ui.core.Component.getOwnerIdFor(this._view))
+	                            .getModel("i18n").getResourceBundle();
 		this._router = sap.ui.core.UIComponent.getRouterFor(this);
 		
 		this._router.attachRouteMatched(this.onRouteMatched, this);
@@ -17,7 +18,11 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 	},
 
 	onApproveWithComment: function(event) {
-		alert("onApproveWithComment");
+	    var comment = prompt(this._resources.getText("DETAIL_APPROVE_COMMENTLABEL"));
+		if (typeof comment === "string") {
+		    // TODO: Approve the invoice
+			this._router.navTo("master", true);
+		}
 	},
 
 	onApprove: function(event) {
@@ -28,7 +33,7 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 	},
 
 	onReject: function(event) {
-		if (confirm(this._resources.getText("DETAIL_APPROVE_CONFIRMTEXT"))) {
+		if (confirm(this._resources.getText("DETAIL_APPROVE_REJECTTEXT"))) {
 		    // TODO: Reject the invoice
 			this._router.navTo("master", true);
 		}
