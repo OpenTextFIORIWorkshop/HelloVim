@@ -4,15 +4,20 @@ HelloVim.view.LineItemFormatter = {
     
     	getCostAssignmentText: function(sAufnrTxt, sKostlTxt, sWbsElement) {
 		
-		/*
-		if (!iAmount || !sCurrency) {
-			return "";
+		var oBundle = this.getModel("i18n").getResourceBundle();
+		var sText = "bla";
+		
+		if (sAufnrTxt) {
+		    sText = oBundle.getText("LINE_ITEM_FORMATTER_INTERNAL_ORDER", [sAufnrTxt]);
 		}
-		var oBundle = nw.epm.refapps.ext.po.apv.util.formatter.getBundle(this);
-		var _iAmount = nw.epm.refapps.ext.po.apv.util.formatter.amountFormatter.format(iAmount);
-		return oBundle.getText("xfld.amount", [_iAmount, sCurrency]);
-		*/
-		return "bla";
+	    if (sKostlTxt) {
+		    sText = oBundle.getText("LINE_ITEM_FORMATTER_COST_CENTER", [sKostlTxt]);
+		}
+		if (sWbsElement) {
+		    sText = oBundle.getText("LINE_ITEM_FORMATTER_PROJECT", [sWbsElement]);
+		}
+		
+		return sText;
 	}
     
 };
