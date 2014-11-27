@@ -1,4 +1,4 @@
-<mvc:View>
+<mvc:View
 	controllerName="HelloVim.view.Attachments"
 	xmlns="sap.m" 
 	xmlns:form="sap.ui.layout.form"
