@@ -8,10 +8,11 @@
 	<Table
 	id="lineItemsTable"
     inset="false"
+    updateFinished="onUpdateFinished"
     >
     <headerToolbar>
       <Toolbar>
-        <Label text="{i18n>LINE_ITEMS_TOOLBAR_TITLE}"></Label>
+        <Label id="lineItemsToolbarLabel" text="{i18n>LINE_ITEMS_TOOLBAR_TITLE}"></Label>
       </Toolbar>
     </headerToolbar>
     <columns>

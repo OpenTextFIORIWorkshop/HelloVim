@@ -24,8 +24,18 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.LineItems", {
         			path: _sPath,
         			template: this._oItemTemplate
         		});
-				
 			}
+    },
+    
+    onUpdateFinished: function() {
+        var oTable = this.byId("lineItemsTable");
+        var oLabel = this.byId("lineItemsToolbarLabel");
+        var iCount = 0;
+        if (oTable.getItems!==null) {
+            iCount  = oTable.getItems().length;
+        }
+        var oBundle = oTable.getModel("i18n").getResourceBundle();
+		oLabel.setText(oBundle.getText("LINE_ITEMS_TOOLBAR_TITLE", [iCount]));
     }
     
     

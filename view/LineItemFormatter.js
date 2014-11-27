@@ -5,7 +5,7 @@ HelloVim.view.LineItemFormatter = {
     	getCostAssignmentText: function(sAufnrTxt, sKostlTxt, sWbsElement) {
 		
 		var oBundle = this.getModel("i18n").getResourceBundle();
-		var sText = "bla";
+		var sText = "";
 		
 		if (sAufnrTxt) {
 		    sText = oBundle.getText("LINE_ITEM_FORMATTER_INTERNAL_ORDER", [sAufnrTxt]);
