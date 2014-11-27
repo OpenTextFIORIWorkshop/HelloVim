@@ -73,11 +73,12 @@
 		<core:ExtensionPoint name="extDetail"/>
 		
 		<footer id="detailsFooter">
-			<Bar id="bar">
-				<contentRight id="detailsContentRight">
-					<Button id="actionButton" icon="sap-icon://action" press="openActionSheet"></Button>
-				</contentRight>
-			</Bar>
+			<Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Accept with comment" type="Accept" press="onAcceptWithComment" />
+                <Button text="Accept" type="Accept" press="onAccept" />
+                <Button text="Reject" type="Reject" press="onReject" />
+          </Toolbar>
 		</footer>
 	</Page>
 </mvc:View>
