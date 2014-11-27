@@ -16,13 +16,12 @@
 			<attributes>
 				<ObjectAttribute text="{VendorName}" />
 				<ObjectAttribute text="{Ort01}, {Pstlz}, {Land1}" />
-				<ObjectAttribute text="{i18n>DETAIL_PHONE_LABEL} {IpCallingSystem}" />
 			</attributes>
 			
 			<statuses>
-    			<ObjectStatus text="{i18n>DETAIL_STATUS_LABEL} {InvStatus}"
+    			<ObjectStatus text="{InvStatus}"
     			              state="Error" />
-	    		<ObjectStatus text="{i18n>DETAIL_INVOICEDATE_LABEL} {DueDate}" />
+	    		<ObjectStatus text="{DueDate}" />
 			</statuses>
 			
 		</ObjectHeader>
