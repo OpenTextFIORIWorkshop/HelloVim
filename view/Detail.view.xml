@@ -48,7 +48,7 @@
 					icon="sap-icon://documents"
 					>
 					    <content>
-					        <mvc:JSView viewName="HelloVim.view.Document" height="1000px" />
+					        <mvc:JSView viewName="HelloVim.view.Document" height="1050px" />
 					    </content>
 				</IconTabFilter>
 			
