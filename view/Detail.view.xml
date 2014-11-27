@@ -1,69 +1,57 @@
-<mvc:View 
-	controllerName="HelloVim.view.Detail"
-	xmlns="sap.m" 
-	xmlns:form="sap.ui.layout.form"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core">
-	<Page 
-		id="detailsPage"
-		title="{i18n>DETAIL_TITLE}"
-		class="sapUiFioriObjectPage"  
-		showNavButton="{device>/isPhone}" 
-		navButtonPress="handleNavButtonPress">
+<mvc:View controllerName="HelloVim.view.Detail"
+	      xmlns="sap.m" 
+	      xmlns:form="sap.ui.layout.form"
+	      xmlns:mvc="sap.ui.core.mvc"
+	      xmlns:core="sap.ui.core">
+	      
+	<Page title="{i18n>DETAIL_TITLE}"
+		  class="sapUiFioriObjectPage"  
+		  showNavButton="{device>/isPhone}" 
+		  navButtonPress="handleNavButtonPress">
 	
-		<ObjectHeader id="header"
-			title="Invoice # {InvoiceKey}"
-			number="{InvoiceAmt}"
-			numberUnit="{Currency}"
-			>
+		<ObjectHeader title="{i18n>DETAIL_TITLE_LABEL} {InvoiceKey}"
+			          number="{InvoiceAmt}"
+			          numberUnit="{Currency}">
 			
-			<attributes id="detailsAttributes">
+			<attributes>
 				<ObjectAttribute text="{VendorName}" />
 				<ObjectAttribute text="{Ort01}, {Pstlz}, {Land1}" />
-				<ObjectAttribute text="Phone {IpCallingSystem}" />
+				<ObjectAttribute text="{i18n>DETAIL_PHONE_LABEL} {IpCallingSystem}" />
 			</attributes>
 			
 			<statuses>
-			<ObjectStatus text="Status: {InvStatus}" state="Error" />
-			<ObjectStatus text="Invoice Date: {DueDate}" />
+    			<ObjectStatus text="{i18n>DETAIL_STATUS_LABEL} {InvStatus}"
+    			              state="Error" />
+	    		<ObjectStatus text="{i18n>DETAIL_INVOICEDATE_LABEL} {DueDate}" />
 			</statuses>
+			
 		</ObjectHeader>
 		
-		<IconTabBar 
-			id="iconTabBar"
-			expanded="{device>/isNoPhone}" >
-			<customData id="customData2">
-                <core:CustomData id="coreCustomData2" key="sapDtResourcePath" value=""></core:CustomData>
-            </customData>
-			<items id="detailsItems">
+		<IconTabBar expanded="{device>/isNoPhone}">
+			<items>
 			
-				<IconTabFilter
-					icon="sap-icon://batch-payments">
-					    <content>
-					        <mvc:XMLView viewName="HelloVim.view.LineItems" />
-					    </content>
+				<IconTabFilter icon="sap-icon://batch-payments">
+				    <content>
+				        <mvc:XMLView viewName="HelloVim.view.LineItems" />
+				    </content>
 				</IconTabFilter>
 			
-				<IconTabFilter
-					icon="sap-icon://documents"
-					>
-					    <content>
-					        <mvc:JSView viewName="HelloVim.view.Document" height="1050px" />
-					    </content>
+				<IconTabFilter icon="sap-icon://documents">
+				    <content>
+				        <mvc:JSView viewName="HelloVim.view.Document" height="1050px" />
+				    </content>
 				</IconTabFilter>
 			
-				<IconTabFilter
-					icon="sap-icon://history">
-					    <content>
-					        <mvc:XMLView viewName="HelloVim.view.History" />
-					    </content>
+				<IconTabFilter icon="sap-icon://history">
+				    <content>
+				        <mvc:XMLView viewName="HelloVim.view.History" />
+				    </content>
 				</IconTabFilter>
 			
-				<IconTabFilter
-					icon="sap-icon://attachment">
-					    <content>
-					        <mvc:XMLView viewName="HelloVim.view.Attachments" />
-					    </content>
+				<IconTabFilter icon="sap-icon://attachment">
+				    <content>
+				        <mvc:XMLView viewName="HelloVim.view.Attachments" />
+				    </content>
 				</IconTabFilter>
 
 				<core:ExtensionPoint name="extIconTabFilter"/>
@@ -73,13 +61,18 @@
 		
 		<core:ExtensionPoint name="extDetail"/>
 		
-		<footer id="detailsFooter">
+		<footer>
 			<Toolbar>
                 <ToolbarSpacer/>
-                <Button text="Accept with comment" type="Accept" press="onAcceptWithComment" />
-                <Button text="Accept" type="Accept" press="onAccept" />
-                <Button text="Reject" type="Reject" press="onReject" />
+                <Button text="{i18n>DETAIL_APPROVEWITHCOMMENT_BUTTONLABEL}"
+                        type="Accept" press="onApproveWithComment" />
+                <Button text="{i18n>DETAIL_APPROVE_BUTTONLABEL}"
+                        type="Accept" press="onApprove" />
+                <Button text="{i18n>DETAIL_REJECT_BUTTONLABEL}"
+                        type="Reject" press="onReject" />
           </Toolbar>
 		</footer>
+		
 	</Page>
+	
 </mvc:View>
