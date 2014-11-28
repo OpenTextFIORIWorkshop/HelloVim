@@ -31,8 +31,16 @@ HelloVim.util.formatter = {
 		return status && "Warning" || "Success";
 	},
 
+	formatInvoiceDetailIntro: function(requester, key) {
+	    key && (key = key.replace(/^0+/, ""));
+		return HelloVim.util.formatter._getResourceBundle(this).getText(
+		    "DETAIL_INVOICE_INTRO", [requester, key]);
+	},
+
 	formatInvoiceDetailTitle: function(requester, key) {
-		return HelloVim.util.formatter._getResourceBundle(this).getText("DETAIL_INVOICE_TITLE", [requester, key]);
+	    key && (key = key.replace(/^0+/, ""));
+		return HelloVim.util.formatter._getResourceBundle(this).getText(
+		    "DETAIL_INVOICE_TITLE", [requester, key]);
 	},
 
 	//_recentDateFormatter: sap.ui.core.format.DateFormat.getDateInstance({style: "daysAgo"}),
