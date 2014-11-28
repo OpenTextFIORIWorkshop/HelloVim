@@ -49,21 +49,21 @@ HelloVim.util.formatter = {
 		return control.getModel("i18n").getResourceBundle();
 	},
 	
-	formatUserActionText: function(sAction) {
+	formatUserActionIcon: function(sAction) {
 	    if(sAction === "A") {
-	        return "Approved";
+	        return "accept";
 	    }
 	    else if(sAction === "F") {
-	        return "Forwarded";
+	        return "action";
 	    }
 	    else if(sAction === "R") {
-	        return "Rejected";
+	        return "group";
 	    }
 	    else if(sAction === "P") {
-	        return "Created";
+	        return "activity-items";
 	    }
 	    else {
-	        return "";
+	        return "activity-individual";
 	    }
 	},
 
