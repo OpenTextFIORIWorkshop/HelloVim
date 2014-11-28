@@ -3,7 +3,7 @@ jQuery.sap.require("sap.m.routing.RouteMatchedHandler");
 
 sap.ui.core.UIComponent.extend("HelloVim.Component", {
 	metadata : {
-		"name" : "Master Detail Sample",
+		"name" : "Approve Purchase Order",
 		"version" : "1.0",
 		"includes" : [],
 		"dependencies" : {
@@ -69,9 +69,9 @@ sap.ui.core.UIComponent.extend("HelloVim.Component", {
 		} 
 
 		// start mock server if required
-		var responderOn = jQuery.sap.getUriParameters().get("responderOn");
-		var bUseMockData = (responderOn === "true");
-		// var bUseMockData = true;
+		//var responderOn = jQuery.sap.getUriParameters().get("responderOn");
+		//var bUseMockData = (responderOn === "true");
+		var bUseMockData = true;
 		if (bUseMockData) {
 			jQuery.sap.require("sap.ui.core.util.MockServer");
 			var oMockServer = new sap.ui.core.util.MockServer({

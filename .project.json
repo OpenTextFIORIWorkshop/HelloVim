@@ -12,5 +12,9 @@
     "defaultLanguage": "en",
     "defaultI18NPropertyFile": "i18n.properties",
     "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/Z_WORKSHOP_GW_VIM_APR_SRV",
+    "loadCustomRequests": true
   }
 }
