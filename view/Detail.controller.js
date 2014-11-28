@@ -1,41 +1,40 @@
+jQuery.sap.require("sap.m.MessageToast");
+
 sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 
 	onInit: function() {
 		this._view = this.getView();
-	    this._resources = sap.ui.component(sap.ui.core.Component.getOwnerIdFor(this._view))
-	                            .getModel("i18n").getResourceBundle();
+		this._resources = sap.ui.component(sap.ui.core.Component.getOwnerIdFor(this._view))
+			.getModel("i18n").getResourceBundle();
 		this._router = sap.ui.core.UIComponent.getRouterFor(this);
-		
+
 		this._router.attachRouteMatched(this.onRouteMatched, this);
 	},
 
 	onRouteMatched: function(oEvent) {
 		if (oEvent.getParameter("name") === "Detail") {
 			var context = new sap.ui.model.Context(this._view.getModel(),
-			        "/" + oEvent.getParameter("arguments").contextPath);
+				"/" + oEvent.getParameter("arguments").contextPath);
 			this._view.setBindingContext(context);
 		}
 	},
 
 	onApproveWithComment: function(event) {
-	    var comment = prompt(this._resources.getText("DETAIL_APPROVE_COMMENTLABEL"));
+		var comment = prompt(this._resources.getText("DETAIL_APPROVE_COMMENTLABEL"));
 		if (typeof comment === "string") {
-		    // TODO: Approve the invoice
-			this._router.navTo("master", true);
+			this._approveInvoice(comment);
 		}
 	},
 
 	onApprove: function(event) {
 		if (confirm(this._resources.getText("DETAIL_APPROVE_CONFIRMTEXT"))) {
-		    // TODO: Approve the invoice
-			this._router.navTo("master", true);
+			this._approveInvoice();
 		}
 	},
 
 	onReject: function(event) {
 		if (confirm(this._resources.getText("DETAIL_APPROVE_REJECTTEXT"))) {
-		    // TODO: Reject the invoice
-			this._router.navTo("master", true);
+			this._rejectInvoice();
 		}
 	},
 
@@ -71,5 +70,20 @@ sap.ui.core.mvc.Controller.extend("HelloVim.view.Detail", {
 		} else {
 			router.navTo("master", {}, true); // otherwise we go backwards with a forward history
 		}
+	},
+
+	_approveInvoice: function(comment) {
+		sap.m.MessageToast.show(this._resources.getText("DETAIL_APPROVE_SUCCESSTEXT"), {
+			duration: 2000
+		});
+    	this._router.navTo("master", true);
+	},
+
+	_rejectInvoice: function(comment) {
+		sap.m.MessageToast.show(this._resources.getText("DETAIL_REJECT_SUCCESSTEXT"), {
+			duration: 2000
+		});
+    	this._router.navTo("master", true);
 	}
+	
 });
