@@ -22,7 +22,7 @@
             dateTime="{path:'Timestamp', formatter: 'HelloVim.util.formatter.formatTimestampDateTime'}"
             userName="{ActualAppr}" 
             title="{path:'UserAction', formatter: 'HelloVim.util.formatter.formatUserActionText'}" 
-            icon="sap-icon://activity-items"
+            icon="sap-icon://activity-individual"
             text="{LoggedAction}">
           </commons:TimelineItem>
         </commons:content>
