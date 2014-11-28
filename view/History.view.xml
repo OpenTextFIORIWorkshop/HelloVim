@@ -6,26 +6,33 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core">
 	
-	<Label text="History"/>
+	<Panel>
+        <Toolbar 
+          width="30%">
+            <Label  
+            text="History"
+            width="120px" 
+            />
+        </Toolbar>
 	
-     <commons:Timeline
-        id="idTimeline"
-        width="30%"
-        showIcons="false"
-        enableBackendFilter="false"
-        growing="false"
-        showHeaderBar="true" 
-        content="{/InvoiceHistorySet}">
-        <commons:content>
-          <commons:TimelineItem
-            id="idTimelineItem" 
-            dateTime="{path:'Timestamp', formatter: 'HelloVim.util.formatter.formatTimestampDateTime'}"
-            userName="{ActualAppr}" 
-            title="{path:'UserAction', formatter: 'HelloVim.util.formatter.formatUserActionText'}" 
-            icon="sap-icon://activity-individual"
-            text="{LoggedAction}">
-          </commons:TimelineItem>
-        </commons:content>
-      </commons:Timeline>  
+         <commons:Timeline
+            id="idTimeline"
+            width="50%"
+            showIcons="true"
+            enableBackendFilter="false"
+            growing="false"
+            showHeaderBar="true" 
+            content="{/InvoiceHistorySet}">
+            <commons:content>
+              <commons:TimelineItem
+                id="idTimelineItem" 
+                dateTime="{path:'Timestamp', formatter: 'HelloVim.util.formatter.formatTimestampDateTime'}"
+                userName="{ActualAppr}"
+                icon="sap-icon://{path:'UserAction', formatter: 'HelloVim.util.formatter.formatUserActionIcon'}"
+                text="{LoggedAction}">
+              </commons:TimelineItem>
+            </commons:content>
+          </commons:Timeline>  
+    </Panel>
 
 </mvc:View>
